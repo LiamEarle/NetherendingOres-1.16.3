@@ -26,5 +26,8 @@ utils/resourcegen/lib/**
 utils/resourcegen/bin/**
 utils/resourcegen/output/**
 
+# Forge
+logs
+
 # Files from Forge MDK
 forge*changelog.txt
