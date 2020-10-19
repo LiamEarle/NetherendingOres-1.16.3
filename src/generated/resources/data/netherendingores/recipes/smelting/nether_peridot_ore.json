@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "netherendingores:nether_peridot_ore"
+  },
+  "result": "minecraft:diamond",
+  "experience": 0.0,
+  "cookingtime": 200
+}

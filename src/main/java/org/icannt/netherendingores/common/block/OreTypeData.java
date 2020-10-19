@@ -89,27 +89,27 @@ public enum OreTypeData implements IOreType {
     private final String namePrefix;
     private final MaterialColor materialColor;
     
-    private int lightLevel;
-    private int harvestLevel;
-    private float hardness;
-    private float resistance;
-    private Rarity rarity;
+    private final int lightLevel;
+    private final int harvestLevel;
+    private final float hardness;
+    private final float resistance;
+    private final Rarity rarity;
     
-    private String[] itemAltTagSuffix;
-    private String itemTagPrefix;
-    private String preferredMod;
+    private final String[] itemAltTagSuffix;
+    private final String itemTagPrefix;
+    private final String preferredMod;
     
-    private Object[] dropItemObject;
-    private boolean dropItems;
-    private int dropItemsQuantityMin;
-    private int dropItemsQuantityMax;
-    private int dropItemsExperienceMin;
-    private int dropItemsExperienceMax;
+    private final Object[] dropItemObject;
+    private final boolean dropItems;
+    private final int dropItemsQuantityMin;
+    private final int dropItemsQuantityMax;
+    private final int dropItemsExperienceMin;
+    private final int dropItemsExperienceMax;
     
-    private boolean furnaceRecipeEnabled;
-    private boolean furnaceRecipeToItem;
-    private int recipeMultiplier;
-    private boolean oreExplosionEnabled;
+    private final boolean furnaceRecipeEnabled;
+    private final boolean furnaceRecipeToItem;
+    private final int recipeMultiplier;
+    private final boolean oreExplosionEnabled;
     
 
     OreTypeData(final String name, final String namePrefix, final MaterialColor materialColor, 
@@ -177,5 +177,10 @@ public enum OreTypeData implements IOreType {
     @Override
     public int getHarvestLevel() {
         return this.harvestLevel;
+    }
+
+    @Override
+    public Rarity getRarity() {
+        return this.rarity;
     }
 }
