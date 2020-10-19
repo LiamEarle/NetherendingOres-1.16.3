@@ -1,5 +1,7 @@
 package org.icannt.netherendingores.common.block;
 
+import net.minecraft.item.Rarity;
+
 public interface IOreType {
 
     String getName();
@@ -7,5 +9,6 @@ public interface IOreType {
     float getResistance();
     int getLightLevel();
     int getHarvestLevel();
+    Rarity getRarity();
 
 }

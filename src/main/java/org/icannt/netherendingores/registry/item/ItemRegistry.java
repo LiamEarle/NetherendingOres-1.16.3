@@ -3,21 +3,43 @@ package org.icannt.netherendingores.registry.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.icannt.netherendingores.NetherendingOres;
+import org.icannt.netherendingores.common.block.OreTypeData;
+import org.icannt.netherendingores.registry.block.BlockRegistry;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ItemRegistry {
 
     public static final ItemGroup GROUP = new ItemGroup(NetherendingOres.MOD_ID + "_item_group") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(Items.GOLD_INGOT);
+            return new ItemStack(BlockRegistry.getOreOfType(OreTypeData.END_DIAMOND_ORE).asItem());
         }
 
+        // Sort Items in ItemGroup alphabetically
+        @Override
+        @ParametersAreNonnullByDefault
+        public void fill(NonNullList<ItemStack> items) {
+           List<Item> sortedItems = ForgeRegistries.ITEMS.getValues()
+            .stream()
+            .filter((item) -> Objects.requireNonNull(item.getRegistryName()).getNamespace().equals(NetherendingOres.MOD_ID))
+            .sorted(Comparator.comparing(item -> item.getRegistryName().getPath()))
+            .collect(Collectors.toList());
 
+            for (Item item : sortedItems) {
+                if (item != null) {
+                    item.fillItemGroup(ItemGroup.SEARCH, items);
+                }
+            }
+        }
     };
 
     private static final List<Item> ITEMS = new ArrayList<>();
