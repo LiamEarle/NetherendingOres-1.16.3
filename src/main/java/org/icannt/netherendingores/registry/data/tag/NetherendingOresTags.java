@@ -23,8 +23,8 @@ public class NetherendingOresTags {
             super.registerTags();
             // Register Ore Tags
             for (IOreType type : OreTypeData.values()) {
-                func_240522_a_(BlockTags.makeWrapperTag(new ResourceLocation(NetherendingOres.MOD_ID, type.getName()).toString()))
-                        .func_240532_a_(BlockRegistry.getOreOfType(type));
+            	getOrCreateBuilder(BlockTags.makeWrapperTag(new ResourceLocation(NetherendingOres.MOD_ID, type.getName()).toString()))
+                        .add(BlockRegistry.getOreOfType(type));
             }
         }
 
