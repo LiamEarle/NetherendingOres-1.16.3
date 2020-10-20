@@ -10,5 +10,12 @@ public interface IOreType {
     int getLightLevel();
     int getHarvestLevel();
     Rarity getRarity();
+    String getOutputTag();
+    int getDropsMinimum();
+    int getDropsMaximum();
+    int getExperienceMinimum();
+    int getExperienceMaximum();
+    int getMultiplier();
+    boolean getFurnaceRecipeEnabled();
 
 }

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "netherendingores:nether_electrotine_ore"
-  },
-  "result": "minecraft:diamond",
-  "experience": 0.0,
-  "cookingtime": 200
-}
